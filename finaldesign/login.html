@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录页面</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+	<!-- 头部 -->
+	<div class="login_head">
+		<div class="cent858">
+			<div class="nav_logo fl">
+				<img src="img/logo.jpg" class="img1">
+				<img src="img/only.png" class="img2">
+			</div>
+			<div class="l_h_title fr">
+				<li>
+					<div class="fl"><a href="login.html">登录<div class="pink_line"></div></a></div>
+					<div class="black_line fl"></div>
+					<div class="fl"><a href="register.html">注册<div class="pink_line"></div></a></div>
+				</li>
+				<li>联系我们</li>
+				<li>
+					<div class="phone_pic fl"><img src="img/phone.png"></div>
+					<span>400-10-25790</span>
+				</li>
+				<li>帮助中心 ></li>
+			</div>
+		</div>
+	</div>
+	<!-- 头部结束 -->
+	<!-- 中间 -->
+	<div class="login_cent">
+		<div class="login_register fr">
+			<div class="l_r_logo"><img src="img/only.png"></div>
+			<input type="text" placeholder="用户名" value="" class="username">
+			<div class="u_l_phone"></div>
+			<input type="password" placeholder="密码" value="" class="l_password">
+			<div class="u_l_pass"></div>
+			<!-- <input type="checkbox" class="l_checkbox"><label>同意用户注册协议和隐私条款</label> -->
+			<!-- <span class="forget_pass fr">忘记密码</span> -->
+			<input type="button" value="登录" class="login_but">
+			<div class="l_r_dsf"><img src="img/dsf.png"></div>
+			<li class="wx fl"><img src="img/wx.png"></li>
+			<li class="qq fl"><img src="img/qq.png"></li>
+			<li class="wb fl"><img src="img/wb.png"></li>
+		</div>
+	</div>
+	<!-- 中间结束 -->
+	<!-- 售后 -->
+	<div class="after_sale cl">
+		<div class="cent858">
+			<div class="after_sale_pic"><img src="img/bottom.png"></div>
+			<ul class="after_sale_list">
+				<li>
+					<p class="p1">服务保障</p>
+					<p class="p2">珠宝课堂</p>
+					<p class="p2">帮助中心</p>
+					<p class="p2">新闻资讯</p>
+				</li>
+				<li>
+					<p class="p1">售后服务</p>
+					<p class="p2">售后政策</p>
+					<p class="p2">15天退货</p>
+					<p class="p2">以大换小</p>
+				</li>
+				<li>
+					<p class="p1">购物指南</p>
+					<p class="p2">购物流程</p>
+					<p class="p2">订单处理</p>
+					<p class="p2">订单查询</p>
+				</li>
+				<li>
+					<p class="p1">支付方式</p>
+					<p class="p2">在线支付</p>
+					<p class="p2">货到付款</p>
+					<p class="p2">银行汇款</p>
+				</li>
+				<li>
+					<p class="p1">关于我们</p>
+					<p class="p2">品牌简介</p>
+					<p class="p2">联系我们</p>
+					<p class="p2">加入我们</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 售后结束 -->
+	<!-- 版权信息 -->
+	<div class="copyright">
+		<div class="cent858">
+			<p>Copyright &copy; 2006-2018 www.onlyyou.com 只为你珠宝 All Right Reserved. 京ICP备11012085号-2</p>
+		</div>
+	</div>
+	<!-- 版权信息结束 -->
+</body>
+<script type="text/javascript">
+	$(function(){
+		var phone_z = /^[1][3|4|5|7|8]\d{9}$/;  //手机号
+		var pass_z = /^\w{6,16}$/;              //密码
+		
+		$('.username').blur(function(){
+			var user_phone = $('.username').val();
+			if(user_phone.length == 0){
+				$('.u_l_phone').text('不能为空');
+				$('.u_l_phone').css({'display':'block','width':'60px'});
+				return false;
+			}
+			if(phone_z.test(user_phone) == false){
+				$('.u_l_phone').text('格式不正确！');
+				$('.u_l_phone').css({'display':'block','width':'100px'});
+				return false;
+			}else{
+				$('.u_l_phone').text('格式正确');
+				$('.u_l_phone').css({'display':'block','width':'60px'});
+			}
+		});
+		//密码
+		$('.l_password').blur(function(){
+			var password = $('.l_password').val();
+			if(password.length == 0){
+				$('.u_l_pass').text('不能为空');
+				$('.u_l_pass').css({'display':'block','width':'60px'});
+				return false;
+			}
+			if(pass_z.test(password) == false){
+				$('.u_l_pass').text('格式不正确！');
+				$('.u_l_pass').css({'display':'block','width':'100px'});
+				return false;
+			}else{
+				$('.u_l_pass').text('密码正确');
+				$('.u_l_pass').css({'display':'block','width':'60px'});
+				
+			}
+		});
+
+
+
+		$('.login_but').click(function(){
+			
+			var user_phone = $('.username').val();
+			if(user_phone == ''){
+				$('.u_l_phone').text('不能为空');
+				$('.u_l_phone').css({'display':'block','width':'60px'});
+				return false;
+			}
+			
+			var password = $('.l_password').val();
+			if(password.length == 0){
+				$('.u_l_pass').text('不能为空');
+				$('.u_l_pass').css({'display':'block','width':'60px'});
+				return false;
+			}
+			$.ajax({
+				url:'./common/qajax.php?type=user_login',
+				data:{
+					user_phone:user_phone,
+					password:password,
+				},
+				type:'post',
+				dataType:'json',
+				success:function(json){
+					if(json.errno == 1){
+						console.log(json.error);
+						location.href = json.url;	
+					}else if(json.errno == 2){
+						$('.u_l_phone').text(json.error);
+						$('.u_l_phone').css({'display':'block','width':'100px'});
+						return false;	
+					}else{
+						$('.u_l_pass').text(json.error);
+						$('.u_l_pass').css({'display':'block','width':'100px'});
+						return false;
+					}			
+				},
+				error:function(e){
+					console.log(e.responseText);
+				},
+			});
+		});
+	})
+
+</script>
+</html>

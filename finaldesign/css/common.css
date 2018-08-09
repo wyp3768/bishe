@@ -1,0 +1,14 @@
+*{margin: 0;padding: 0;}
+body{font-family: "微软雅黑";background:#fff;color:#333;font-size:14px;letter-spacing:1px;  /*word-spacing:0.5px;*/}
+a{text-decoration:none;color:#333;cursor:pointer;}
+img{border:0;vertical-align:middle;width:100%;height:100%;}
+ul,ol{list-style: none;}
+li{display: block;}
+input,button,select,textarea{outline:none;}
+textarea{resize:none}
+.fl{float:left;}
+.fr{float:right;}
+.cl{clear:both;}
+.cent858{width:858px;margin:auto;}
+.pink_color{color:#ffb1a1;}
+.posi_r{position:relative;}
